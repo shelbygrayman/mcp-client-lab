@@ -1,0 +1,1957 @@
+{
+  "version": 1,
+  "node": "v24.22.1",
+  "platform": "linux",
+  "arch": "x64",
+  "measuredAt": "2026-11-08T13:07:31.998Z",
+  "elapsedMs": 21769,
+  "total": 72,
+  "agreed": 72,
+  "scope": "Three synthetic fixtures; two pinned TypeScript SDK clients; two Node runtime profiles; two validators; three repeats. Not a desktop-client or production-server benchmark.",
+  "results": [
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "valid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "discovery:CODEGEN_BLOCKED",
+      "observed": "discovery:CODEGEN_BLOCKED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "fail",
+          "code": "CODEGEN_BLOCKED"
+        }
+      ]
+    },
+    {
+      "fixture": "invalid-output",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "call:OUTPUT_REJECTED",
+      "observed": "call:OUTPUT_REJECTED",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "fail",
+          "code": "OUTPUT_REJECTED"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 1,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 2,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.26.0",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "node",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "default",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    },
+    {
+      "fixture": "no-output-schema",
+      "repeat": 3,
+      "sdk": "1.32.2",
+      "runtime": "no-codegen",
+      "validator": "cfworker",
+      "expected": "pass",
+      "observed": "pass",
+      "agrees": true,
+      "steps": [
+        {
+          "phase": "initialize",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "discovery",
+          "status": "pass",
+          "code": "OK"
+        },
+        {
+          "phase": "call",
+          "call": 0,
+          "status": "pass",
+          "code": "OK"
+        }
+      ]
+    }
+  ]
+}
