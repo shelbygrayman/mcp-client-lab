@@ -1,0 +1,24 @@
+{
+  "name": "mcp-client-lab",
+  "version": "0.1.0",
+  "description": "Replay MCP tool catalogs and captured results through pinned SDK clients in normal and codegen-restricted Node.",
+  "type": "module",
+  "private": true,
+  "bin": { "mcp-client-lab": "dist/cli.js" },
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "demo": "npm run build && node dist/cli.js demo --out reports/local",
+    "benchmark": "npm run build && node scripts/benchmark.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": ["mcp", "compatibility", "developer-tools", "json-schema", "reproduction"],
+  "license": "MIT",
+  "dependencies": {
+    "@cfworker/json-schema": "4.1.6",
+    "sdk-1-26": "npm:@modelcontextprotocol/sdk@1.26.0",
+    "sdk-1-32": "npm:@modelcontextprotocol/sdk@1.32.2"
+  },
+  "devDependencies": { "@types/node": "26.6.6", "typescript": "7.0.2" }
+}
