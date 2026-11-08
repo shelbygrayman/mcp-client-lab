@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "echo",
+      "description": "Return a synthetic text value.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "calls": [
+    {
+      "name": "echo",
+      "arguments": {
+        "text": "hello"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "hello"
+          }
+        ],
+        "structuredContent": {
+          "text": 17
+        }
+      }
+    }
+  ]
+}
