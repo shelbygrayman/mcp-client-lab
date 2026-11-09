@@ -1,0 +1,36 @@
+# Copy into your repository as .github/workflows/mcp-compatibility.yml.
+# Commit a synthetic capture at compatibility/catalog.json first.
+name: Captured MCP compatibility
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  capture-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          path: application
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: shelbygrayman/mcp-client-lab
+          ref: 839ff53e2280fcfc362eb6a425abb4ac5f4ae479
+          path: compatibility-lab
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: compatibility-lab/package-lock.json
+      - run: npm ci
+        working-directory: compatibility-lab
+      - run: npm run build
+        working-directory: compatibility-lab
+      - name: Replay committed capture through all eight profiles
+        working-directory: compatibility-lab
+        run: node dist/cli.js check --input "$GITHUB_WORKSPACE/application/compatibility/catalog.json" --out "$GITHUB_WORKSPACE/compatibility-report"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: always()
+        with:
+          name: mcp-compatibility-report
+          path: compatibility-report/
+          if-no-files-found: ignore
