@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "schema_case",
+      "inputSchema": {
+        "type": "object"
+      },
+      "outputSchema": {
+        "type": "object",
+        "$defs": {
+          "entry": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        "properties": {
+          "entry": {
+            "$ref": "#/$defs/entry"
+          }
+        },
+        "required": [
+          "entry"
+        ]
+      }
+    }
+  ],
+  "calls": [
+    {
+      "name": "schema_case",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Synthetic schema conformance capture"
+          }
+        ],
+        "structuredContent": {
+          "entry": {
+            "id": 7
+          }
+        }
+      }
+    }
+  ]
+}
