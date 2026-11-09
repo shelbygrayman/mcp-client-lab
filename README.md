@@ -99,6 +99,12 @@ node dist/cli.js check --input path/to/your-fixture.json
 
 The gate intentionally fails if **any** supported profile rejects your capture. If no-codegen compatibility is a requirement, that exposes a problem early. This first release always runs all eight profiles; it does not offer a custom profile allowlist.
 
+## Copy a CI integration
+
+[Consumer workflow](examples/consumer-ci.yml) is a complete GitHub Actions example with pinned actions and a pinned lab revision, a committed capture, and report upload even when a check fails. Copy it into your repository and add `compatibility/catalog.json`. The pinned lab revision supports this command; review and update it deliberately when adopting a later release.
+
+This gate requires acceptance by **all eight profiles**. A capture with an output schema is expected to fail default-validator/no-codegen discovery on the pinned SDKs. Use this strict gate only when all-profile compatibility is your requirement. `npm run demo` instead checks that the known failure and mitigation are reproduced. Neither command runs your production server.
+
 ## Scope and limits
 
 - Real SDK clients initialize, discover tools and validate captured results against a local low-level SDK server over `InMemoryTransport`.
@@ -118,3 +124,5 @@ The gate intentionally fails if **any** supported profile rejects your capture. 
 Bring a minimal synthetic capture, exact SDK/runtime versions, observed stage and an upstream issue or specification link. A useful contribution demonstrates a repeatable incompatibility, not just another warning heuristic. See [RESEARCH.md](RESEARCH.md) for the initial decision and [BENCHMARKS.md](BENCHMARKS.md) for evidence.
 
 MIT. Independent project; no upstream endorsement or official client certification.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for synthetic reproductions and the fixed-corpus benchmark contribution protocol.
