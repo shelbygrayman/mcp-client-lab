@@ -1,0 +1,80 @@
+[
+  {
+    "name": "valid-output",
+    "family": "echo",
+    "outputSchema": true,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "invalid-output",
+    "family": "echo",
+    "outputSchema": true,
+    "callOutcome": "call:OUTPUT_REJECTED"
+  },
+  {
+    "name": "no-output-schema",
+    "family": "control",
+    "outputSchema": false,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "nested-object-valid",
+    "family": "nested-object",
+    "outputSchema": true,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "nested-object-invalid",
+    "family": "nested-object",
+    "outputSchema": true,
+    "callOutcome": "call:OUTPUT_REJECTED"
+  },
+  {
+    "name": "array-items-valid",
+    "family": "array-items",
+    "outputSchema": true,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "array-items-invalid",
+    "family": "array-items",
+    "outputSchema": true,
+    "callOutcome": "call:OUTPUT_REJECTED"
+  },
+  {
+    "name": "local-ref-valid",
+    "family": "local-ref",
+    "outputSchema": true,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "local-ref-invalid",
+    "family": "local-ref",
+    "outputSchema": true,
+    "callOutcome": "call:OUTPUT_REJECTED"
+  },
+  {
+    "name": "anyof-union-valid",
+    "family": "anyof-union",
+    "outputSchema": true,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "anyof-union-invalid",
+    "family": "anyof-union",
+    "outputSchema": true,
+    "callOutcome": "call:OUTPUT_REJECTED"
+  },
+  {
+    "name": "value-constraints-valid",
+    "family": "value-constraints",
+    "outputSchema": true,
+    "callOutcome": "pass"
+  },
+  {
+    "name": "value-constraints-invalid",
+    "family": "value-constraints",
+    "outputSchema": true,
+    "callOutcome": "call:OUTPUT_REJECTED"
+  }
+]
