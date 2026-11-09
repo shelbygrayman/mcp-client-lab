@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "schema_case",
+      "inputSchema": {
+        "type": "object"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "done"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10
+          }
+        },
+        "required": [
+          "status",
+          "count"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "calls": [
+    {
+      "name": "schema_case",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Synthetic schema conformance capture"
+          }
+        ],
+        "structuredContent": {
+          "status": "unknown",
+          "count": 11,
+          "extra": true
+        }
+      }
+    }
+  ]
+}
