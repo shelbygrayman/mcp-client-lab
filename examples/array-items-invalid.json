@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "schema_case",
+      "inputSchema": {
+        "type": "object"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "values"
+        ]
+      }
+    }
+  ],
+  "calls": [
+    {
+      "name": "schema_case",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Synthetic schema conformance capture"
+          }
+        ],
+        "structuredContent": {
+          "values": [
+            1,
+            "two"
+          ]
+        }
+      }
+    }
+  ]
+}
