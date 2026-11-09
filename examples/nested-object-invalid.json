@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "schema_case",
+      "inputSchema": {
+        "type": "object"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "profile": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "profile"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "calls": [
+    {
+      "name": "schema_case",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Synthetic schema conformance capture"
+          }
+        ],
+        "structuredContent": {
+          "profile": {}
+        }
+      }
+    }
+  ]
+}
