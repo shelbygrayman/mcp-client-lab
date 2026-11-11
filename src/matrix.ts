@@ -11,13 +11,27 @@ export interface Report {
   version: 1; node: string; transport: 'in-memory'; toolCount: number; callCount: number;
   rows: Row[];
 }
-export function runMatrix(text: string): Report {
+export interface Selection {
+  sdk?: '1.26.0' | '1.32.2';
+  runtime?: Row['runtime'];
+  validator?: Row['validator'];
+}
+export function runMatrix(text: string, selection: Selection = {}): Report {
+  if (Object.keys(selection).some(key => !['sdk', 'runtime', 'validator'].includes(key)) ||
+      (selection.sdk !== undefined && !['1.26.0', '1.32.2'].includes(selection.sdk)) ||
+      (selection.runtime !== undefined && !['node', 'no-codegen'].includes(selection.runtime)) ||
+      (selection.validator !== undefined && !['default', 'cfworker'].includes(selection.validator))) {
+    throw new Error('Invalid profile selection');
+  }
   const fixture = parseFixture(text);
   const worker = fileURLToPath(new URL('./worker.js', import.meta.url));
   const rows: Row[] = [];
   for (const [alias, sdk] of [['sdk-1-26', '1.26.0'], ['sdk-1-32', '1.32.2']] as const) {
+    if (selection.sdk && selection.sdk !== sdk) continue;
     for (const runtime of ['node', 'no-codegen'] as const) {
+      if (selection.runtime && selection.runtime !== runtime) continue;
       for (const validator of ['default', 'cfworker'] as const) {
+        if (selection.validator && selection.validator !== validator) continue;
         const args = [...(runtime === 'no-codegen' ? ['--disallow-code-generation-from-strings'] : []), worker, alias, validator];
         const child = spawnSync(process.execPath, args, {
           input: JSON.stringify(fixture), encoding: 'utf8', timeout: 10000, maxBuffer: 1048576,
@@ -42,7 +56,7 @@ export function runMatrix(text: string): Report {
   return { version: 1, node: process.version, transport: 'in-memory', toolCount: fixture.tools.length, callCount: fixture.calls.length, rows };
 }
 export function markdown(report: Report): string {
-  const lines = ['# MCP Client Lab', '', `Node ${report.node}; in-memory transport; ${report.toolCount} tools; ${report.callCount} captured calls.`, '',
+  const lines = ['# MCP Client Lab', '', `Node ${report.node}; in-memory transport; ${report.toolCount} tools; ${report.callCount} captured calls.`, '', `Executed profiles: ${report.rows.length}. Only the rows below were checked; omitted profiles are untested.`, '',
     '| SDK | Node profile | Validator | Result | Evidence |', '|---|---|---|---|---|'];
   for (const row of report.rows) {
     const failures = row.steps.filter(s => s.status === 'fail').map(s => `${s.phase}${s.call === undefined ? '' : `[${s.call}]`}: ${s.code}`);
