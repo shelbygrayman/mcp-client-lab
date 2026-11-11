@@ -8,7 +8,13 @@ No account, model API key or running MCP server required. No tool implementation
 
 ## Try the reproduced failure
 
-Requires Node 22 or newer and npm.
+Requires Node 22 or newer, npm and Git. Run the tagged GitHub release without cloning:
+
+```sh
+npm exec --yes --package=git+https://github.com/shelbygrayman/mcp-client-lab.git#v0.2.0 -- mcp-client-lab demo
+```
+
+This installs from GitHub and builds the CLI during installation. It is not an npm registry publication. For local development:
 
 ```sh
 git clone https://github.com/shelbygrayman/mcp-client-lab.git
@@ -61,7 +67,7 @@ node dist/cli.js check --input fixture.json --out new-report-directory
 
 You receive a Markdown matrix and machine-readable JSON. The report contains stage and error categories, not raw schemas, tool names, arguments, results, paths or exception messages. The output directory must be new. Omit `calls` for discovery-only checks.
 
-`check` exits **0** if all profiles accept the fixture, **1** if any profile rejects it, **2** for invalid input, worker failure or output error. A rejection can be the correct outcome for deliberately invalid captured output. `demo` instead asserts the documented expected pattern.
+`check` exits **0** if all selected profiles accept the fixture, **1** if any selected profile rejects it, **2** for invalid input, worker failure or output error. A rejection can be the correct outcome for deliberately invalid captured output. `demo` instead asserts the documented expected pattern.
 
 ## Why this exists
 
@@ -97,13 +103,23 @@ npm run build
 node dist/cli.js check --input path/to/your-fixture.json
 ```
 
-The gate intentionally fails if **any** supported profile rejects your capture. If no-codegen compatibility is a requirement, that exposes a problem early. This first release always runs all eight profiles; it does not offer a custom profile allowlist.
+### Select the environments you support
 
-## Copy a CI integration
+By default `check` still runs all eight profiles. In v0.2, filters intersect:
 
-[Consumer workflow](examples/consumer-ci.yml) is a complete GitHub Actions example with pinned actions and a pinned lab revision, a committed capture, and report upload even when a check fails. Copy it into your repository and add `compatibility/catalog.json`. The pinned lab revision supports this command; review and update it deliberately when adopting a later release.
+```sh
+node dist/cli.js check --input path/to/your-fixture.json --runtime no-codegen --validator cfworker --out compatibility-report
+```
 
-This gate requires acceptance by **all eight profiles**. A capture with an output schema is expected to fail default-validator/no-codegen discovery on the pinned SDKs. Use this strict gate only when all-profile compatibility is your requirement. `npm run demo` instead checks that the known failure and mitigation are reproduced. Neither command runs your production server.
+This runs both pinned SDKs using only the interpreter validator with code generation disabled. Add `--sdk 1.32.2` for one SDK. Use `--runtime node` for ordinary Node, or `--validator default` to test the default validator. Unknown, missing and duplicate values exit 2. `demo` rejects filters so its reproduction cannot silently skip a known failure.
+
+Only executed rows appear in the report. **Omitted profiles are untested.** Invalid captured output still causes exit 1 in selected profiles. Choosing a subset states a deployment requirement; it does not repair compatibility with excluded environments.
+
+### Copy a CI integration
+
+[Consumer workflow](examples/consumer-ci.yml) checks a committed synthetic capture with `--runtime no-codegen --validator cfworker`, retaining reports even on failure. It uses pinned actions and the v0.2.0 lab tag; for stricter source pinning replace the tag with its reviewed full commit SHA. Copy it into your repository and add `compatibility/catalog.json`. Adjust the filters to the environments your application supports.
+
+Remove both filters to require all eight profiles. A capture with an output schema is expected to fail default-validator/no-codegen discovery on the pinned SDKs. `npm run demo` instead checks that the known failure and mitigation are reproduced. Neither command runs your production server.
 
 ## Scope and limits
 
