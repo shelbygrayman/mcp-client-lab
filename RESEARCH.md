@@ -22,3 +22,17 @@ The narrower experiment is actual SDK acceptance and rejection of one captured c
 ## Validation before expanding
 
 v0.1 demonstrates technical usefulness, not user adoption. No stars, downloads, testimonials, customer interviews or performance superiority are claimed. Before adding more adapters, use the lab on another publicly reproducible failure and assess whether an existing tool provides an equally simple reproduction. Future Python or desktop-client coverage must execute those real clients and state versions explicitly.
+
+## Adoption release, 11 November 2026
+
+v0.2 adds intersecting SDK/runtime/validator filters, explicit untested-profile wording and a tagged GitHub installation path. Default checks and the benchmark retain the complete eight-profile matrix. No adoption or extra client coverage is implied by these changes.
+
+Three public reports were rechecked before choosing the next fixtures:
+
+| Public report | What the current lab establishes | Remaining work |
+|---|---|---|
+| Brave #235 | Original synthetic output-schema cases reproduce code-generation restriction and interpreter mitigation on the two pinned SDKs. | Keep the distinction from Brave's HTTP transport and production application. |
+| TypeScript SDK #2795 | No strict desktop-client or schema-dialect emission claim. | A future case must execute a pinned real consumer; changing a `$schema` label is not sufficient. |
+| Go SDK #1188 | No Go server or protocol-era negotiation claim. | A future case must run the Go server and capture both negotiated protocol versions. |
+
+The latter two are research candidates, not three newly reproduced bugs. Existing synthetic coverage remains thirteen fixtures across six output-schema families. Contribution tasks should expand this evidence without inflating compatibility claims.
