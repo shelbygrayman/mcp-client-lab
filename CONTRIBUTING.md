@@ -14,3 +14,9 @@ Do not attach credentials, private catalogs or production logs. Reports redact r
 For a new benchmark case, add a standalone JSON fixture and its expectation to `examples/benchmark-cases.json` before measuring. Include a conforming capture and a deliberately nonconforming capture. Retain mismatches; do not redefine expected behavior merely to make a run green. Describe the schema family and the constraint being tested. A repeat checks stability and does not add a new schema case.
 
 For SDK changes, retain the old pinned comparison until a documented reason warrants removing it. A failing outcome may be the correct rejection of invalid output. This project does not award client certification.
+
+## First contributions
+
+Small, independently verifiable tasks are tracked in [open issues](https://github.com/shelbygrayman/mcp-client-lab/issues). Each task should name its fixture or test, its acceptance criterion and a reproduction command. You can contribute synthetic cases without a model API key or a running MCP server.
+
+Before proposing a new client adapter, distinguish a reported upstream incident from a case this lab actually reproduces. [RESEARCH.md](RESEARCH.md) records that boundary. A desktop-client report cannot be certified by adding a guessed strict validator here.
