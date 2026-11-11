@@ -87,3 +87,26 @@ test('CLI provides working demo, CI exit codes and overwrite protection', () => 
     assert.equal(invoke(['demo', '--input', 'examples/valid-output.json']).status, 2);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
+
+test('profile filters intersect and CI preserves rejection and invalid-selection exits', () => {
+  const cli = new URL('../dist/cli.js', import.meta.url).pathname;
+  const invoke = args => spawnSync(process.execPath, [cli, ...args], { encoding: 'utf8' });
+  const dir = mkdtempSync(join(tmpdir(), 'mcp-selected-'));
+  try {
+    const selected = invoke(['check', '--input', 'examples/valid-output.json', '--sdk', '1.32.2', '--runtime', 'no-codegen', '--validator', 'cfworker', '--out', join(dir, 'selected')]);
+    assert.equal(selected.status, 0, selected.stderr);
+    const report = JSON.parse(readFileSync(join(dir, 'selected/report.json'), 'utf8'));
+    assert.equal(report.rows.length, 1);
+    assert.deepEqual([report.rows[0].sdk, report.rows[0].runtime, report.rows[0].validator, report.rows[0].status], ['1.32.2', 'no-codegen', 'cfworker', 'pass']);
+    assert.match(selected.stdout, /omitted profiles are untested/);
+    assert.equal(invoke(['check', '--input', 'examples/invalid-output.json', '--runtime', 'no-codegen', '--validator', 'cfworker']).status, 1);
+    assert.equal(invoke(['check', '--input', 'examples/valid-output.json', '--validator', 'typo']).status, 2);
+    assert.equal(invoke(['check', '--input', 'examples/valid-output.json', '--sdk', 'latest']).status, 2);
+    assert.equal(invoke(['demo', '--runtime', 'node']).status, 2);
+    assert.equal(invoke(['check', '--input', 'examples/valid-output.json', '--runtime', 'node', '--runtime', 'no-codegen']).status, 2);
+    assert.equal(invoke(['check', '--input', 'examples/valid-output.json', '--runtime']).status, 2);
+    assert.throws(() => runMatrix(valid, { runtime: 'typo' }));
+    assert.throws(() => runMatrix(valid, { unknown: 'node' }));
+    assert.equal(runMatrix(valid, { runtime: 'node' }).rows.length, 4);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
