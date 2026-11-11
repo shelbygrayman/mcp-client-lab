@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: shelbygrayman/mcp-client-lab
-          ref: 839ff53e2280fcfc362eb6a425abb4ac5f4ae479
+          ref: v0.2.0 # Replace with the reviewed release commit SHA for immutable pinning.
           path: compatibility-lab
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
@@ -25,9 +25,9 @@ jobs:
         working-directory: compatibility-lab
       - run: npm run build
         working-directory: compatibility-lab
-      - name: Replay committed capture through all eight profiles
+      - name: Replay capture through supported no-codegen interpreter profiles
         working-directory: compatibility-lab
-        run: node dist/cli.js check --input "$GITHUB_WORKSPACE/application/compatibility/catalog.json" --out "$GITHUB_WORKSPACE/compatibility-report"
+        run: node dist/cli.js check --input "$GITHUB_WORKSPACE/application/compatibility/catalog.json" --runtime no-codegen --validator cfworker --out "$GITHUB_WORKSPACE/compatibility-report"
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: always()
         with:
