@@ -40,4 +40,4 @@ The benchmark writes a fresh measured report. `npm test` covers the known failur
 
 ## What this does not establish
 
-No live Brave service, production workload, Python client, desktop client, Cloudflare runtime, model API, HTTP transport or end-user adoption was tested. Node's no-codegen flag reproduces a restriction, not an entire edge environment. One echo schema is not a representative corpus of arbitrary JSON Schema constructs. Acceptance of captured output says nothing about server business logic or input validation.
+No live Brave service, production workload, Python client, desktop client, Cloudflare runtime, model API, HTTP transport or end-user adoption was tested. Node's no-codegen flag reproduces a restriction, not an entire edge environment. The expanded corpus covers six output-schema families; it is not representative of all JSON Schema constructs. Acceptance of captured output says nothing about server business logic or input validation.
