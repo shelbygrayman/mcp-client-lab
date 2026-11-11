@@ -1,5 +1,11 @@
 # Reproduction evidence
 
+## v0.2 verification, 11 November 2026
+
+After adding profile selection, all **312/312** full-matrix outcomes still matched the fixed expectations. Eight regression tests passed, including selected-profile acceptance, invalid-output rejection, invalid options and unchanged default/demo behavior. Measured on Node v24.22.1, Linux x64, AMD EPYC 9V74; wall time 58,495 ms including process startup. The current [raw report](reports/benchmark.json) records all outcomes and the v0.2 lockfile hash. This reruns the existing thirteen-fixture corpus; it adds no new schema families or real-client certification.
+
+A packed installation was also run outside the checkout and reproduced the eight-profile demo. GitHub CI status is reported separately from these local measurements.
+
 ## Expanded corpus, 9 November 2026
 
 **312/312 profile outcomes matched fixed expectations.** Thirteen original synthetic fixtures × two pinned SDKs × two runtimes × two validators × three repeats. The corpus covers six output-schema families: echo, nested required objects, integer array items, local `$defs`/`$ref`, nullable `anyOf`, and enum/range/additional-property constraints. Each family has a conforming and nonconforming captured result; a no-output-schema fixture is the control.
