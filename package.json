@@ -16,7 +16,8 @@
     "demo": "npm run build && node dist/cli.js demo",
     "benchmark": "npm run build && node scripts/benchmark.mjs",
     "prepack": "npm run build",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "benchmark:pagination": "npm run build && node scripts/pagination-benchmark.mjs"
   },
   "keywords": [
     "mcp",
@@ -42,7 +43,9 @@
     "BENCHMARKS.md",
     "CONTRIBUTING.md",
     "SECURITY.md",
-    "LICENSE"
+    "LICENSE",
+    "PAGINATION.md",
+    "scripts/pagination-benchmark.mjs"
   ],
   "repository": {
     "type": "git",
