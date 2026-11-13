@@ -6,6 +6,10 @@ Replay tool definitions and captured results through two pinned, real MCP TypeSc
 
 No account, model API key or running MCP server required. No tool implementations are executed. This is a focused diagnostic, not a general MCP compliance badge.
 
+## New: catch silently missing tools
+
+Paginated `tools/list` responses can leave a client with an incomplete catalog. Run `npm run benchmark:pagination` to compare three discovery strategies across eight edge cases and both pinned SDKs. Includes empty cursors, cycles and later-page errors, a reusable bounded collector, and [raw results](reports/pagination.json). See [the pagination lab and research](PAGINATION.md). This tests application strategies on pinned v1 SDKs, not desktop clients or SDK main.
+
 ## Try the reproduced failure
 
 Requires Node 22 or newer, npm and Git. Run the tagged GitHub release without cloning:
@@ -125,7 +129,7 @@ Remove both filters to require all eight profiles. A capture with an output sche
 
 - Real SDK clients initialize, discover tools and validate captured results against a local low-level SDK server over `InMemoryTransport`.
 - `no-codegen` is Node's `--disallow-code-generation-from-strings`. It is **not** a test of Cloudflare Workers, browsers, Cursor, Claude Desktop, Python SDKs or a model's tool-selection behaviour.
-- This is replay of data, not execution of your actual server. It does not validate server business logic, tool input semantics, authorization, transport compatibility, pagination or remote authentication.
+- This is replay of data, not execution of your actual server. It does not validate server business logic, tool input semantics, authorization, transport compatibility or remote authentication. The separate pagination benchmark tests synthetic discovery strategies only.
 - Output errors are categorized from SDK messages. Unexpected categories are retained as generic rejection codes, not guessed diagnoses.
 - Child processes receive no inherited credentials or preload options. They are resource-bounded but **not OS sandboxes**. Do not use malicious input to evaluate dependency security.
 - Limits: 1 MiB input, depth 32, 20,000 JSON nodes, 50 tools, 50 calls, ten seconds and 1 MiB output per worker. Duplicate JSON object keys are not detected.
