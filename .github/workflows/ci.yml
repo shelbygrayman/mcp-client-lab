@@ -19,9 +19,10 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run benchmark
+      - run: npm run benchmark:pagination
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: always()
         with:
           name: compatibility-node-${{ matrix.node }}
-          path: reports/benchmark.json
+          path: reports/*.json
           if-no-files-found: ignore
