@@ -3,12 +3,15 @@ import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, rmSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { parseFixture } from '../dist/fixture.js';
 import { runMatrix, markdown } from '../dist/matrix.js';
 
 const fixture = name => readFileSync(new URL(`../examples/${name}.json`, import.meta.url), 'utf8');
 const valid = fixture('valid-output');
+
+const cli = fileURLToPath(new URL('../dist/cli.js', import.meta.url));
 
 test('reported code-generation failure and interpreter mitigation across both SDKs', () => {
   const report = runMatrix(valid);
@@ -71,7 +74,6 @@ test('reports omit raw tool metadata, input, results and exceptions', () => {
 
 test('CLI provides working demo, CI exit codes and overwrite protection', () => {
   const dir = mkdtempSync(join(tmpdir(), 'mcp-client-lab-'));
-  const cli = new URL('../dist/cli.js', import.meta.url).pathname;
   const invoke = args => spawnSync(process.execPath, [cli, ...args], { encoding: 'utf8' });
   try {
     assert.equal(invoke(['--help']).status, 0);
@@ -89,7 +91,6 @@ test('CLI provides working demo, CI exit codes and overwrite protection', () => 
 });
 
 test('profile filters intersect and CI preserves rejection and invalid-selection exits', () => {
-  const cli = new URL('../dist/cli.js', import.meta.url).pathname;
   const invoke = args => spawnSync(process.execPath, [cli, ...args], { encoding: 'utf8' });
   const dir = mkdtempSync(join(tmpdir(), 'mcp-selected-'));
   try {
