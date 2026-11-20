@@ -97,6 +97,8 @@ const client = new Client(
 
 Use an SDK version you have tested. Validator implementations and JSON Schema dialect support differ; the passing echo fixture does not establish equivalence for arbitrary schemas.
 
+Follow the [single-profile walkthrough](docs/selected-profile.md) to compare an accepted result and a call-stage rejection with the same client configuration.
+
 ## Add it to CI
 
 This repository includes [.github/workflows/ci.yml](.github/workflows/ci.yml) for Node 22 and 24, tests, and raw report artifacts. In a checked-out copy of the lab, use:
