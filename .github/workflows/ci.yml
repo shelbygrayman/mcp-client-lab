@@ -26,3 +26,27 @@ jobs:
           name: compatibility-node-${{ matrix.node }}
           path: reports/*.json
           if-no-files-found: ignore
+  windows-package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm.cmd ci
+      - name: Run the packaged CLI from a clean consumer directory
+        shell: pwsh
+        run: |
+          $consumer = Join-Path $env:RUNNER_TEMP 'mcp consumer'
+          New-Item -ItemType Directory -Path $consumer | Out-Null
+          npm.cmd pack --pack-destination "$consumer"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Set-Location "$consumer"
+          $archive = (Get-ChildItem *.tgz -ErrorAction Stop).FullName
+          npm.cmd install --no-audit --no-fund "$archive"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & '.\node_modules\.bin\mcp-client-lab.cmd' demo --out 'demo report'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $report = Get-Content 'demo report/report.json' -Raw | ConvertFrom-Json
+          if ($report.rows.Count -ne 8) { throw 'Expected eight demo profiles' }
